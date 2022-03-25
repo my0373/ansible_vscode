@@ -8,11 +8,13 @@
     owner: root
     group: wheel
     mode: '0644'
+  become: yes
 
 - name: Install the latest version of VSCode
   dnf:
     name: code
     state: latest
+  become: yes
 
 # tasks file for vscode_install
 - name: Install my settings
