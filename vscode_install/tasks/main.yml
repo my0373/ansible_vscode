@@ -16,6 +16,13 @@
     state: latest
   become: yes
 
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: ~/.config/Code/User/
+    state: directory
+    mode: '0755'
+
 # tasks file for vscode_install
 - name: Install my settings
   ansible.builtin.template:
